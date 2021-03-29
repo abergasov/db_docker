@@ -1,0 +1,18 @@
+version: '3'
+
+volumes:
+  data_volume_serve_db:
+
+services:
+
+  serveDB:
+    image: mariadb
+    env_file:
+      - common.env
+    container_name: serveDB.mf
+    restart: always
+    tty: true
+    ports:
+      - 3306:3306
+    volumes:
+      - data_volume_serve_db:/var/lib/mysql/
