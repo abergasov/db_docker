@@ -6,7 +6,7 @@ volumes:
 services:
 
   serveDB:
-    image: mariadb
+    image: mariadb:10.6.0
     env_file:
       - common.env
     container_name: serveDB.mf
